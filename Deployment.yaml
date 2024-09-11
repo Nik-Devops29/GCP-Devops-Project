@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  
+  labels:
+    app: gcp
+  name: gcp-devops-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcp
+  strategy: {}
+  template:
+    metadata:
+      
+      labels:
+        app: gcp
+    spec:
+      containers:
+      - image: gcr.io/composed-sensor-435108-i6/gcp-devops-project:latest
+        name: gcp-devops-gke
+        ports:
+         - containerPort: 5000
+        env:
+         - name: PORT
+           value: 5000
+        resources: {}
