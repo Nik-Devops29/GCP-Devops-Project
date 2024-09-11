@@ -1,7 +1,7 @@
 steps:
 ## Building the container image from the Dockerfile
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/$PROJECT_ID/gcp-devops-project-kodekloud", "."]
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/gcp-devops-project", "."]
 ## Pushing the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/$PROJECT_ID/gcp-devops-project-kodekloud"]
+  args: ["push", "gcr.io/$PROJECT_ID/gcp-devops-project"]
