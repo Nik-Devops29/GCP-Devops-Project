@@ -5,3 +5,5 @@ steps:
 ## Pushing the container image
 - name: "gcr.io/cloud-builders/docker"
   args: ["push", "gcr.io/$PROJECT_ID/gcp-devops-project"]
+options:
+  logging: CLOUD_LOGGING_ONLY
