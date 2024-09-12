@@ -30,11 +30,11 @@ spec:
 
 ---
 
-apiVersion: " v1"
-kind: Service
+apiVersion: "v1"
+kind: "Service"
 metadata: 
-  name: gcp-devops-gke-service
-  namespace: gcp-devops-dev 
+  name: "gcp-devops-gke-service"
+  namespace: "gcp-devops-dev" 
   labels:
     app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
 spec: 
