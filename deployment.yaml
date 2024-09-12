@@ -4,8 +4,8 @@ metadata:
   
   labels:
     app: gcp
-  name: gcp-devops-gke
-  namespace: gcp-devops-dev
+  name: gcp-devops-gke-deployment
+  
 spec:
   replicas: 1
   selector:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - image: gcr.io/composed-sensor-435108-i6/gcp-devops-project:latest
-        name: gcp-devops-project
+        name: gcp-devops-project-container
         ports:
          - containerPort: 5000
         env:
@@ -34,7 +34,7 @@ apiVersion: " v1"
 kind: Service
 metadata: 
 - name: gcp-devops-gke-service
-  namespace: gcp-devops-dev
+  
   labels:
     app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
 spec: 
