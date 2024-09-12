@@ -1,9 +1,18 @@
 steps:
-## Building the container image from the Dockerfile
-- name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/$PROJECT_ID/gcp-devops-project-main", "."]
-## Pushing the container image
-- name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/$PROJECT_ID/gcp-devops-project-main"]
+  # build the container image
+- name: "gcp-devops-project-prod/cloud-builders/docker"
+  args: ["build", "-t", "gcp-devops-project-prod/$PROJECT_ID/gcp-devops-project", "."]
+  # push container image
+- name: "gcp-devops-project-prod/cloud-builders/docker"
+  args: ["push", "gcp-devops-project-prod/$PROJECT_ID/gcp-devops-project"]
+  # deploy container image to GKE
+- name: "gcp-devops-project-prod/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=deployment.yaml
+  - --image=gcp-devops-project-prod/$PROJECT_ID/gcp-devops-project
+  - --location=us-central1-c
+  - --cluster=kodekloud-gcp-project
+  - --namespace=gcp-devops-prod
 options:
   logging: CLOUD_LOGGING_ONLY
