@@ -36,7 +36,7 @@ metadata:
 - name: gcp-devops-gke-service
   
   labels:
-    app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
+    app.kubernetes.io/managed-by: gcp-cloud-build-deploy
 spec: 
   ports: 
   - protocol: "TCP"
