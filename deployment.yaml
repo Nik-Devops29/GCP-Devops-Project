@@ -19,7 +19,7 @@ spec:
         app: gcp
     spec:
       containers:
-      - image: gcr.io/composed-sensor-435108-i6/gcp-devops-project:latest
+      - image: gcp-devops-project-prod/composed-sensor-435108-i6/gcp-devops-project:latest
         name: gcp-devops-project-container
         ports:
          - containerPort: 5000
