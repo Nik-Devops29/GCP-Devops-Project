@@ -5,6 +5,7 @@ metadata:
   labels:
     app: gcp
   name: gcp-devops-gke
+  namespace: gcp-devops-dev
 spec:
   replicas: 1
   selector:
